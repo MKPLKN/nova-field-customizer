@@ -4,7 +4,7 @@ A Laravel Nova tool for customizing forms
 ### 1) Install
 `composer require bhnow/nova-field-customizer`
 
-### 2) Load service provider
+### 2) Register Tool
 Add ` Bhnow\NovaFieldCustomizer\NovaFieldCustomizer ` inside `NovaServiceProvider.php`
 
 ```php
