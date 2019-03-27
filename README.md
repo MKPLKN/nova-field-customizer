@@ -1,10 +1,10 @@
 # Nova Field Customizer
 A Laravel Nova tool for customizing forms
 
-### Install
+### 1) Install
 `composer require bhnow/nova-field-customizer`
 
-### Load @media classes (optional)
+### 2) Load service provider
 Add ` Bhnow\NovaFieldCustomizer\NovaFieldCustomizer ` inside `NovaServiceProvider.php`
 
 ```php
@@ -15,8 +15,7 @@ public function tools()
     ];
 }
 ```
-If you do this, you can use make the forms/fields reponsive by usign TailwindCSS screen classes.
-For example: `w-full md:w-1/3` - [Read more about TailwindCSS screen classes](https://tailwindcss.com/docs/responsive-design/#app)
+
 ### Available methods
 
 #### Add classes to specific part of the field/form row
