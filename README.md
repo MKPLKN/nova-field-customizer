@@ -48,3 +48,5 @@ it set your custom classes.
 `->fifth()` <- Width 1/5>
 
 `->clear()` <- Clears all classes>
+
+`->removeBorder()` <- Remove field's bottom border>
