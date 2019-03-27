@@ -1,6 +1,22 @@
 # Nova Field Customizer
 A Laravel Nova tool for customizing forms
 
+### Install
+`composer require bhnow/nova-field-customizer`
+
+### Load @media classes (optional)
+Add ` Bhnow\NovaFieldCustomizer\NovaFieldCustomizer ` inside `NovaServiceProvider.php`
+
+```php
+public function tools()
+{
+    return [
+        new Bhnow\NovaFieldCustomizer\NovaFieldCustomizer(),
+    ];
+}
+```
+If you do this, you can use make the forms/fields reponsive by usign TailwindCSS screen classes.
+For example: `w-full md:w-1/3` - [Read more about TailwindCSS screen classes](https://tailwindcss.com/docs/responsive-design/#app)
 ### Available methods
 
 #### Add classes to specific part of the field/form row
@@ -20,8 +36,6 @@ it set your custom classes.
 
 `->fieldClasses($string, $clear = false)`
 
-#### Examples
-``
 
 #### Helper functions
 `->stack()` <- Stacks label & field (label top, field bottom)>
