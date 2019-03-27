@@ -21,7 +21,10 @@ export default {
     },
 
     mounted() {
-        if (this.field === undefined) {
+        if (this.field === undefined
+            || this.$options.name.includes('index-')
+            || this.$options.name.includes('detail-')
+            || this.$options.name === 'panel-item') {
             return
         }
 
