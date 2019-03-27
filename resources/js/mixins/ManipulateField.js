@@ -21,11 +21,11 @@ export default {
     },
 
     mounted() {
-        if (this.$options.name === undefined || !this.$options.name.includes('form-') || !this.$options.name.includes('field')) {
+        if (this.field === undefined) {
             return
         }
 
-        this.form = this.$el.closest("form");
+        this.form = this.$el.closest("form")
         this.saveDivs();
         this.row();
 
