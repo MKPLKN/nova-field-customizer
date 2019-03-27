@@ -19,9 +19,7 @@ public function tools()
 ### Available methods
 
 #### Add classes to specific part of the field/form row
-First parameter is a string, which represents all the class names you want to add.
-Second paramenter is optional and if you set it true, it will clear all the default classes before
-it set your custom classes.
+The first parameter is a string, which represents all the class names you want to add. The second parameter is optional and if you set it true, it will clear all the default classes before it set your custom classes.
 
 `->formRowClasses($string, $clear = false)`
 
