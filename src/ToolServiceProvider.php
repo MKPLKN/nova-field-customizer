@@ -31,6 +31,7 @@ class ToolServiceProvider extends ServiceProvider
             'forth',
             'fifth',
             'clear',
+            'removeBorder',
         ];
 
         Nova::serving(function (ServingNova $event) use ($macros) {

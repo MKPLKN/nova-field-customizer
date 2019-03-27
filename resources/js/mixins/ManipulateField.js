@@ -13,7 +13,8 @@ export default {
                 "third",
                 "forth",
                 "fifth",
-                "clear"
+                "clear",
+                "removeBorder",
             ],
             form: null,
             formDivs: [],
@@ -31,11 +32,6 @@ export default {
         this.form = this.$el.closest("form")
         this.saveDivs();
         this.row();
-
-        if (this.field.clear) {
-            this.$el.setAttribute("class", "");
-            this.clearChildNodes(this.$el.childNodes);
-        }
 
         _.each(this.field, (params, key) => {
             if (typeof this[key] === "function" && _.includes(this.lookup, key)) {
@@ -115,6 +111,13 @@ export default {
         fifth() {
             this.clearFormDivWidthClasses("w-1/5");
             this.addFormDivClass("w-full md:w-1/5");
+        },
+        clear() {
+            this.$el.setAttribute("class", "");
+            this.clearChildNodes(this.$el.childNodes);
+        },
+        removeBorder() {
+            this.$el.classList.remove('border-b')
         },
 
         formRowClasses(params) {
