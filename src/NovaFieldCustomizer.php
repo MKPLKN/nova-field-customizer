@@ -14,8 +14,8 @@ class NovaFieldCustomizer extends Tool
      */
     public function boot()
     {
-        Nova::script('nova-field-customizer', __DIR__.'/../dist/js/tool.js');
-        Nova::style('nova-field-customizer', __DIR__.'/../dist/css/tool.css');
+        Nova::script('nova-field-customizer', __DIR__ . '/../dist/js/tool.js');
+        Nova::style('nova-field-customizer', __DIR__ . '/../dist/css/tool.css');
     }
 
     /**
@@ -25,6 +25,6 @@ class NovaFieldCustomizer extends Tool
      */
     public function renderNavigation()
     {
-        return view('nova-field-customizer::navigation');
+        //
     }
 }

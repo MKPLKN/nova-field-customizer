@@ -16,7 +16,7 @@ export default {
                 "clear"
             ],
             form: null,
-            formDivs: []
+            formDivs: [],
         };
     },
 
@@ -43,9 +43,12 @@ export default {
 
     methods: {
         saveDivs() {
-            this.form.childNodes.forEach(cn => {
+            this.form.childNodes.forEach((cn, index) => {
                 if (cn.nodeName === "DIV") {
                     cn.setAttribute("id", "form-row");
+                    if (index == 0 || (index + 1) == this.form.childNodes.length) {
+                        cn.classList.add('w-full')
+                    }
                     this.formDivs.push(cn);
                 }
             });
@@ -74,38 +77,41 @@ export default {
         },
         row() {
             this.form.classList.add("flex", "flex-wrap");
-            this.formDivs.forEach(div => {
-                if (_.includes(div.classList, "form-div")) return;
-                div.classList.add("form-div", "w-full");
-            });
+
+            if (this.$el.closest('#form-row').getAttribute('data-set')) {
+                this.$el.closest('#form-row').classList.add('w-full');
+            }
+
+            this.$el.closest('#form-row').setAttribute('data-set', 'true');
         },
 
-        clearFormDivWidthClasses() {
-            this.$el.closest(".form-div").classList.forEach(c => {
-                if (c.includes("w-")) {
-                    this.$el.closest(".form-div").classList.remove(c);
+        clearFormDivWidthClasses(aboutToAdd) {
+            this.$el.closest("#form-row").classList.forEach(c => {
+                if (_.startsWith(c, 'w-') && c !== aboutToAdd) {
+                    this.$el.closest("#form-row").classList.remove(c);
                 }
             });
         },
         addFormDivClass(classes) {
-            this.$el.closest(".form-div").classList.add(classes);
+            this.loopClasses(classes, this.$el.closest("#form-row"))
+            // this.$el.closest("#form-row").classList.add(classes);
         },
 
         half() {
-            this.clearFormDivWidthClasses();
-            this.addFormDivClass("w-1/2");
+            this.clearFormDivWidthClasses("w-1/2");
+            this.addFormDivClass("w-full md:w-1/2");
         },
         third() {
-            this.clearFormDivWidthClasses();
-            this.addFormDivClass("w-1/3");
+            this.clearFormDivWidthClasses("w-1/3");
+            this.addFormDivClass("w-full md:w-1/3");
         },
         forth() {
-            this.clearFormDivWidthClasses();
-            this.addFormDivClass("w-1/4");
+            this.clearFormDivWidthClasses("w-1/4");
+            this.addFormDivClass("w-full md:w-1/4");
         },
         fifth() {
-            this.clearFormDivWidthClasses();
-            this.addFormDivClass("w-1/5");
+            this.clearFormDivWidthClasses("w-1/5");
+            this.addFormDivClass("w-full md:w-1/5");
         },
 
         formRowClasses(params) {
