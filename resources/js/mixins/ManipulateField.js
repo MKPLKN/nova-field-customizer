@@ -25,7 +25,8 @@ export default {
         if (this.field === undefined
             || this.$options.name.includes('index-')
             || this.$options.name.includes('detail-')
-            || this.$options.name === 'panel-item') {
+            || this.$options.name === 'panel-item'
+            || !this.$el.closest("form")) {
             return
         }
 
