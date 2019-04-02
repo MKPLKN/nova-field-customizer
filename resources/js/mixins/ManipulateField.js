@@ -15,6 +15,7 @@ export default {
                 "fifth",
                 "clear",
                 "removeBorder",
+                "charCount",
             ],
             form: null,
             formDivs: [],
@@ -161,6 +162,21 @@ export default {
                 elem.setAttribute("class", "");
             }
             this.loopClasses(params.classes, elem);
-        }
+        },
+
+
+        // /**
+        //  * Helpers
+        //  */
+        // charCount(limit) {
+        //     return 'true';
+        //     return console.log('yup');
+
+        //     if (document.querySelector('[data-nfc="true"]')) {
+        //         return
+        //     }
+
+        //     this.$el.querySelector('input').closest('div').innerHTML += '<label data-nfc="true" class="inline-block text-80 p-0 leading-tight">yo</label>';
+        // },
     }
 }

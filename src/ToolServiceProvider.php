@@ -47,6 +47,11 @@ class ToolServiceProvider extends ServiceProvider
                 return $this;
             });
 
+            Field::macro('charCount', function ($limit = 170) {
+                $this->meta['charCount'] = ['limit' => $limit];
+                return $this;
+            });
+
             Nova::script('nova-field-customizer', __DIR__ . '/../dist/js/tool.js');
         });
     }
