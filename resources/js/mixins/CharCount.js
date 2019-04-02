@@ -10,14 +10,7 @@ export default {
     mounted() {
         this.$nextTick(() => {
             this.label = document.querySelector("#charcount-label-" + this.field.attribute)
-            // Nova.$on(this.field.attribute + '-value', () => {
-            console.log(Nova.bus._events['bio-value'][0]());
-            Nova.$on('bio-value', () => {
-                console.log('nutting?');
-            })
-
         })
-
     },
     computed: {
         charCount() {
@@ -38,8 +31,7 @@ export default {
             }
             if (this.label) {
                 this.label.style.right = 0
-                this.label.style.padding = 0
-                this.label.style.top = '-' + this.label.clientHeight + 'px'
+                this.label.style.top = '-' + (this.label.clientHeight + 3) + 'px'
             }
 
             return length >= limit ? limit : length;
