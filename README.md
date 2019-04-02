@@ -48,3 +48,5 @@ The first parameter is a string, which represents all the class names you want t
 `->clear()` <- Clears all classes>
 
 `->removeBorder()` <- Remove field's bottom border>
+
+`->charCount($limit = 170)` <- Works for textfield, textarea & password>
